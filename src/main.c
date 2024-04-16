@@ -17,3 +17,11 @@ int main(int argc, char** argv) {
     printf("Hello World!\n");
     return 0;
 }
+
+/*lista encadeada NEW*/
+Lista *Lista_new(int data_size, void (*free_data)(void *)) {
+    Lista *nova = (Lista *) malloc(sizeof(Lista));
+    if (nova == NULL) {
+        fprintf(stderr, "Erro ao alocar memória\n");
+        exit(EXIT_FAILURE);
+
