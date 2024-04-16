@@ -12,11 +12,9 @@
 #include <stdio.h>
 
 #include "lista.h"
-
-/*lista encadeada NEW*/
-Lista *Lista_new(int data_size, void (*free_data)(void *)) {
-    Lista *nova = (Lista *) malloc(sizeof(Lista));
-    if (nova == NULL) {
-        fprintf(stderr, "Erro ao alocar memória\n");
-        exit(EXIT_FAILURE);
-
+void Lista_new(Lista* lista, int data_size, void (*free_data)(void*)) {
+    lista->head = NULL;
+    lista->tail = NULL;
+    lista->data_size = data_size;
+    lista->free_data = free_data;
+}
