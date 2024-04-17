@@ -49,8 +49,19 @@ typedef struct {
 void Lista_new(Lista* lista, int data_size, void (*free_data)(void*));
 
 /**
+Lista
  * Libera memória utilizada pela lista, e a reinicializa.
  */
+
+void Lista_new(Lista* lista, int data_size, void (*free_data)(void*)) {
+    lista->size = 0;
+    lista->data_size = data_size;
+    lista->free_data = free_data;
+    lista->first = NULL;
+    lista->last = NULL;
+    lista->current = NULL;
+}
+
 void Lista_delete(Lista* lista);
 
 /**
