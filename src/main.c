@@ -9,12 +9,12 @@
  * avaliado pelos testes.
  */
 
-#include <stdio.h>
 
-#include "lista.h"
 void Lista_new(Lista* lista, int data_size, void (*free_data)(void*)) {
-    lista->head = NULL;
-    lista->tail = NULL;
+    lista->size = 0;
     lista->data_size = data_size;
     lista->free_data = free_data;
+    lista->first = NULL;
+    lista->last = NULL;
+    lista->current = NULL;
 }
